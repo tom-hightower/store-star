@@ -2,7 +2,7 @@
   "name": "store-star",
   "version": "1.0.0",
   "description": "Finds best route through a store",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
