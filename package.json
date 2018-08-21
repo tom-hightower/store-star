@@ -1,0 +1,26 @@
+{
+  "name": "store-star",
+  "version": "1.0.0",
+  "description": "Finds best route through a store",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "walmart": "0.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-hightower/store-star.git"
+  },
+  "author": "Tom Hightower",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom-hightower/store-star/issues"
+  },
+  "homepage": "https://github.com/tom-hightower/store-star#readme"
+}
