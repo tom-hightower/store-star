@@ -11,15 +11,26 @@
       <fieldset>
         <form action="/" method="post">
           <input name="product" type="text" class="ghost-input" placeholder="Enter a Product" required>
-	  <input name="zipcode" type="number" class="ghost-input" placeholder="Enter your Zip code" required>
-          <input type="submit" class="ghost-button" value="Get Location">
-        </form>
+	  <input name="zipcode" type="number" maxlength="5" class="ghost-input" placeholder="Enter your Zip code" required>
+	  <input type="submit" class="ghost-button" value="Get Location">
+	</form>
+
 	<% if(location !== null){ %>
 	<p><%= location %></p>
 	<% } %>
+
+	<% if(productList !== null){ %>
+	<select>
+	  <% for (i = 0; i < productList.length; i++) { %>
+	   <option value= <%= productList[i].productId.productId %> > <%= productList[i].name%> </option>
+	  <% } %>
+	</select>
+	<% } %>
+	
 	<% if(error !== null){ %>
 	<p><%= error %></p>
 	<% } %>
+
       </fieldset>
     </div>
   </body>

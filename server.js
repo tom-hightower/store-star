@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-    res.render('index', {location: null, error: null})
+    res.render('index', {location: null, error: null, productList: null})
     //res.send('Hello World!')
 })
 
@@ -23,15 +23,16 @@ app.post('/', function (req, res) {
     findStore(zipcode).then(function whenOk(store) {
 	
 	walmart.stores.search(store.no, product).then(function(data) {
-	    var location = data.results[0].location.detailed[0]
+	    var products = data.results
+	    var location = products[0].location.detailed[0]
 	    var locationText = `The product ${product} is in section ${location.section} of aisle ${location.aisle} of zone ${location.zone} in store ${store.name}!`
-	    res.render('index', {location: locationText, error: null})
+	    res.render('index', {location: locationText, error: null, productList: products})
 	})	
 	return store
 	
     }).catch(function notOk(err) {
 	console.error(err)
-	res.render('index', {location: null, error: err})
+	res.render('index', {location: null, error: err, productList: null})
     })
     
 })

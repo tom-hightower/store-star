@@ -1,4 +1,0 @@
-found item
-Found 15 items
-{ aisle: [ 'A.19' ],
-  detailed: [ { zone: 'A', aisle: 19, section: 7 } ] }
