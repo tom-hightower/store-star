@@ -9,11 +9,15 @@ app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
     res.render('index', {location: null, error: null, productList: null})
-    //res.send('Hello World!')
 })
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
+})
+
+app.post('/addProduct', function (req, res) {
+    console.log(req.body);
+    res.redirect('/');
 })
 
 app.post('/', function (req, res) {

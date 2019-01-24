@@ -12,7 +12,7 @@
         <form action="/" method="post">
           <input name="product" type="text" class="ghost-input" placeholder="Enter a Product" required>
 	  <input name="zipcode" type="number" maxlength="5" class="ghost-input" placeholder="Enter your Zip code" required>
-	  <input type="submit" class="ghost-button" value="Get Location">
+	  <button type="submit" class="ghost-button" formaction="/">Get Location</button>
 	</form>
 
 	<% if(location !== null){ %>
@@ -25,6 +25,7 @@
 	   <option value= <%= productList[i].productId.productId %> > <%= productList[i].name%> </option>
 	  <% } %>
 	</select>
+	<button type="submit" class="ghost-button" formaction="/addProduct">Add Product</button>
 	<% } %>
 	
 	<% if(error !== null){ %>
